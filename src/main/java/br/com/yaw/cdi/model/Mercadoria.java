@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * 
  * <p>As funcionalidades desse sistema demonstração são concentradas no cadastro (CRUD) de mercadorias.</p>
  * 
- * <p>Essa entidade é mapeada com anotações do <code>Objectify</code>, um framework para persistência alto-nível no datastore (mecanismo de persistência do <code>App Engine</code>).</p>
+ * <p>Essa entidade é mapeada com anotações da <code>JPA</code>, o mecanismo padrão do Java para mapeamento <code>ORM</code>.</p>
  * 
  * @author YaW Tecnologia
  */

@@ -7,7 +7,8 @@ import javax.persistence.PersistenceContext;
 import br.com.yaw.cdi.model.Mercadoria;
 
 @Stateless
-public class MercadoriaServiceEJB extends AbstractPersistence<Mercadoria, Long> implements MercadoriaService {
+public class MercadoriaServiceEJB extends AbstractPersistence<Mercadoria, Long> 
+	implements MercadoriaService {
 
 	@PersistenceContext
     private EntityManager em;
@@ -21,6 +22,5 @@ public class MercadoriaServiceEJB extends AbstractPersistence<Mercadoria, Long> 
 	public MercadoriaServiceEJB() {
 		super(Mercadoria.class);
 	}
-	
 	
 }

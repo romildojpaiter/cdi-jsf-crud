@@ -2,7 +2,6 @@ package br.com.yaw.cdi.mb;
 
 import static javax.faces.context.FacesContext.getCurrentInstance;
 
-
 import java.io.Serializable;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -14,18 +13,16 @@ import javax.inject.Named;
 
 import br.com.yaw.cdi.model.Mercadoria;
 import br.com.yaw.cdi.service.MercadoriaService;
-import br.com.yaw.cdi.service.MercadoriaServiceEJB;
 
 @Named
 @RequestScoped
 public class MercadoriaMB implements Serializable {
 	
+	/**
+	 * Referência para o componente EJB.
+	 */
 	@Inject
 	private MercadoriaService service;
-	
-	private Long idSelecionado;
-	
-	private List<Mercadoria> mercadorias;
 	
 	/**
 	 * Referência para a mercadoria utiliza na inclusão (nova) ou edição.
@@ -33,6 +30,9 @@ public class MercadoriaMB implements Serializable {
 	@Inject
 	private Mercadoria mercadoria;
 	
+	private Long idSelecionado;
+	
+	private List<Mercadoria> mercadorias;
 	
 	public MercadoriaMB() {
 	}
