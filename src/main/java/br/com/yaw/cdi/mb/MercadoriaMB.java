@@ -14,12 +14,22 @@ import javax.inject.Named;
 import br.com.yaw.cdi.model.Mercadoria;
 import br.com.yaw.cdi.service.MercadoriaService;
 
+/**
+ * Componente responsável por integrar o front-end (páginas JSF) c/ camada de serviço (EJB), para resolver o cadastro de <code>Mercadoria</code>.
+ * 
+ * <p>Trata-se de um <code>Managed Bean</code>, ou seja, as instâncias dessa classe são controladas pelo <code>JSF</code>. 
+ * Objetos de <code>MercadoriaMB</code> são criados e gerenciados pelo <code>CDI</code>, no escopo de <code>Request<code>.</p>
+ * 
+ * <p>Esse componente atua com um papel parecido com o <code>Controller</code> de outros frameworks <code>MVC</code>, ele resolve o fluxo de navegação e liga os componentes visuais com os dados.</p>
+ * 
+ * @author YaW Tecnologia
+ */
 @Named
 @RequestScoped
 public class MercadoriaMB implements Serializable {
 	
 	/**
-	 * Referência para o componente EJB.
+	 * Referência para o componente EJB, injetado pelo container.
 	 */
 	@Inject
 	private MercadoriaService service;
