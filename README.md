@@ -4,6 +4,8 @@ Aplicativo web demonstração, desenvolvido com as tecnologias: CDI, JSF, EJB e 
 
 O objetivo dessa aplicação é servir como conteúdo no estudo de desenvolvimento de soluções para web, utilizando tecnologias produtivas com foco em qualidade e eficiência. A aplicação foi implantanda no CloudBees, uma plataforma de cloud computing (PaaS) para tecnologias da família Java.
 
+Você pode acessar a aplicação no CloudBees através da url: http://cdi-jsf-crud.yawdemo.cloudbees.net/
+
 Detalhes da implementação
 -------
 Tecnologias utilizadas na implementação:
@@ -21,6 +23,7 @@ Pré-requisitos
 * JDK - versão 1.6 do Java, ou mais recente;
 * Eclipse - recomendamos o Eclipse IDE;
 * Plugin para Eclipse - JBoss Tools;
+* Maven - para build e dependências.
 * Application Server Java EE - JBoss AS 6 ou 7 (EAP);
 * MySQL - versão 5 ou mais recente;
 
