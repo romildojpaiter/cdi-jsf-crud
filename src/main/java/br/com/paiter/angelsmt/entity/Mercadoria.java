@@ -1,10 +1,12 @@
-package br.com.yaw.cdi.model;
+package br.com.paiter.angelsmt.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import br.com.paiter.core.entitys.AbstractEntity;
 
 /**
  * Classe de modelo que representa uma mercadoria. A mercadoria é um objeto persistido, por isso utilizamos o nome entidade.

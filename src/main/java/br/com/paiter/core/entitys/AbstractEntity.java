@@ -1,4 +1,4 @@
-package br.com.yaw.cdi.model;
+package br.com.paiter.core.entitys;
 
 import java.io.Serializable;
 
@@ -7,7 +7,7 @@ import java.io.Serializable;
  * 
  * <p>Esse contrato é utilizado pelo componente base de persistência: <code>AbstractPersistence</code>.</p>
  * 
- * @see br.com.yaw.cdi.service.AbstractPersistence
+ * @see br.com.paiter.angelsmt.service.AbstractPersistence
  * 
  * @author YaW Tecnologia
  */

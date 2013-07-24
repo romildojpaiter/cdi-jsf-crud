@@ -1,4 +1,4 @@
-package br.com.yaw.cdi.service;
+package br.com.paiter.angelsmt.service;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import br.com.yaw.cdi.model.AbstractEntity;
+import br.com.paiter.core.entitys.AbstractEntity;
 
 /**
  * Classe resolve os métodos básicos de cadastro (CRUD) com API da <code>JPA</code>.

@@ -1,4 +1,4 @@
-package br.com.yaw.cdi.mb;
+package br.com.paiter.angelsmt.action;
 
 import static javax.faces.context.FacesContext.getCurrentInstance;
 
@@ -11,8 +11,8 @@ import javax.faces.application.FacesMessage;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.yaw.cdi.model.Mercadoria;
-import br.com.yaw.cdi.service.MercadoriaService;
+import br.com.paiter.angelsmt.entity.Mercadoria;
+import br.com.paiter.angelsmt.service.MercadoriaService;
 
 /**
  * Componente responsável por integrar o front-end (páginas JSF) c/ camada de serviço (EJB), para resolver o cadastro de <code>Mercadoria</code>.
@@ -60,14 +60,6 @@ public class MercadoriaMB implements Serializable {
 	}
 	
 	
-	public void editar() {
-		if (idSelecionado == null) {
-			return;
-		}
-		mercadoria = service.find(idSelecionado);
-		//log.debug("Pronto pra editar");
-	}
-	
 	public List<Mercadoria> getMercadorias() {
 		System.out.println("service: "+service);
 		if (mercadorias == null) {
@@ -76,6 +68,13 @@ public class MercadoriaMB implements Serializable {
 		return mercadorias;
 	}
 
+	public void editar() {
+		if (idSelecionado == null) {
+			return;
+		}
+		mercadoria = service.find(idSelecionado);
+		//log.debug("Pronto pra editar");
+	}
 	
 	public String salvar() {
 		try {

@@ -1,10 +1,10 @@
-package br.com.yaw.cdi.service;
+package br.com.paiter.angelsmt.service;
 
 import java.util.List;
 
 import javax.ejb.Local;
 
-import br.com.yaw.cdi.model.Mercadoria;
+import br.com.paiter.angelsmt.entity.Mercadoria;
 
 /**
  * Determina a interface de negócio para estipular o serviço da entidade <code>Mercadoria</code>.

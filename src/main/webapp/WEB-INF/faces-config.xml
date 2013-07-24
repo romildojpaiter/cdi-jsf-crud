@@ -13,6 +13,7 @@
 			<base-name>messages_labels</base-name>
 			<var>msg</var>
 		</resource-bundle>
+		
 	</application>
 
 	<navigation-rule>

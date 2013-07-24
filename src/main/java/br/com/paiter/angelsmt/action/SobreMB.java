@@ -1,4 +1,4 @@
-package br.com.yaw.cdi.mb;
+package br.com.paiter.angelsmt.action;
 
 import javax.inject.Named;
 import javax.inject.Singleton;

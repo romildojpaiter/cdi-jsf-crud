@@ -5,6 +5,7 @@
 	xmlns:p="http://primefaces.org/ui">
 
 	<ul class="nav nav-list" style="padding-top: 15px;">
+	
 		<li><em><h:outputText value="#{msg['label.mercadorias']}" /></em></li>
 
 		<li class="#{empty param.active || param.active == 'lista' ? 'active' : ''}">
@@ -13,12 +14,21 @@
 				<f:param name="active" value="lista" />
             </h:link>
 		</li>
+		
+		<li class="#{empty param.active || param.active == 'listaModelo' ? 'active' : ''}">
+			<h:link outcome="listaModelos">
+				<h:outputText value="#{msg['menu.modelo']}" escape="false" />
+				<f:param name="active" value="listaModelo" />
+            </h:link>
+		</li>		
+		
 		<li class="#{param.active == 'incluir' ? 'active' : ''}">
 			<h:link outcome="incluirMercadoria">
 				<h:outputText value="#{msg['menu.incluir']}" escape="false" />
 				<f:param name="active" value="incluir" />
 			</h:link>
 		</li>
+		
 		<li class="divider"></li>
 		<li class="#{param.active == 'sobre' ? 'active' : ''}">
 			<h:link outcome="sobre">
