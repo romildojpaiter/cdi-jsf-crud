@@ -1,0 +1,117 @@
+<ui:fragment xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:stella="http://stella.caelum.com.br/faces2">
+
+	<h:form styleClass="form-horizontal">
+	
+		<fieldset>
+		
+			<legend>
+				<h3>
+					<h:outputText value="#{msg['label.modelo']}" />
+					<small> <h:outputText value="#{subtitle}" /></small>
+				</h3>
+			</legend>
+			
+			<div class="control-group">
+				<label class="control-label"><h:outputText
+						value="#{msg['label.modelo.nomeModelo']}" />
+				</label>
+				<div class="controls">
+					<h:inputText value="#{modeloMB.modelo.nomeModelo}"
+						label="#{msg['label.modelo.nomeModelo']}" required="true"
+						styleClass="input-large">
+						<f:validateLength minimum="5" maximum="60" />
+					</h:inputText>
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label"><h:outputText
+						value="CPF" /></label>
+				<div class="controls">
+					<h:inputText value="#{modeloMB.modelo.cpf}"
+						label="CFP" required="true"
+						styleClass="input-large">
+					</h:inputText>
+				</div>
+			</div>			
+
+			<div class="control-group">
+				<label class="control-label"><h:outputText
+						value="#{msg['label.modelo.datanascimento']}" /></label>
+				<div class="controls">
+					<p:calendar id="cal" value="#{modeloMB.modelo.dataNascimento}" 
+						navigator="true" 
+						display="inline" 
+						required="true"
+						yearRange="c-50:c+0"
+						pattern="dd/MM/yyyy"
+						requiredMessage="#{msg['label.modelo.datanascimento']}"/> 
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label"><h:outputText
+						value="#{msg['label.sexo']}" /></label>
+				<div class="controls">
+					<h:selectOneMenu value="#{modeloMB.modelo.flagSexo}">
+						<f:selectItems value="#{combosHelperEnum.listarDominioSexoCombo()}"/>
+					</h:selectOneMenu>
+				</div>
+			</div>
+			
+			<div class="control-group">
+				<label class="control-label"><h:outputText
+						value="#{msg['label.situacao']}" /></label>
+				<div class="controls">
+					<h:selectOneMenu value="#{modeloMB.modelo.flagAtivoInativo}">
+						<f:selectItems value="#{combosHelperEnum.listarDominioAtivoInativoCombo()}" />
+					</h:selectOneMenu>
+				</div>
+			</div>
+			
+			
+		</fieldset>
+
+		<div class="control-group">
+			<div class="controls">
+			
+				<p:commandButton value="#{msg['button.salvar']}"
+					action="#{modeloMB.salvar}" styleClass="btn btn-success" onclick="dlg.show();" oncomplete="dlg.hide();"
+					rendered="#{modeloMB.modelo != null}" />
+					
+				<p:button value="#{msg['button.cancelar']}"
+					outcome="listaModelos" styleClass="btn" />
+					
+				<p:commandButton value="#{msg['button.excluir']}"
+					onclick="confirmation.show()"
+					rendered="#{modeloMB.modelo.idModelo != null}" immediate="true"
+					styleClass="btn btn-danger" />
+			</div>
+		</div>
+		
+		<p:dialog id="dialog" header="#{msg['dialog.emexecucao.titulo']}" widgetVar="dlg" dynamic="true" modal="true">  
+	    	<h:outputText value="#{msg['dialog.emexecucao.aguarde']}" />  
+		</p:dialog>
+		
+		<p:confirmDialog id="confirmDialog" message="#{msg['excluir.modelo.confirma']}"
+			header="#{msg['excluir.modelo']}" severity="alert" widgetVar="confirmation">  
+			
+	        <p:commandButton id="confirm" value="#{msg['confirma.sim']}" update="messages" 
+	        	oncomplete="confirmation.hide()" action="#{modeloMB.remover}" />
+	        	  
+	        <p:commandButton id="decline" value="#{msg['confirma.nao']}" 
+	        	onclick="confirmation.hide()" type="button" />
+	        	
+	    </p:confirmDialog>
+	
+		<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+		<h:inputHidden value="#{modeloMB.modelo.idModelo}" />
+		
+	</h:form>
+	
+</ui:fragment>

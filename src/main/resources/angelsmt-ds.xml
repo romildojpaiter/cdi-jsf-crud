@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema">
+    <datasource 
+        jndi-name="angelsDatasource"
+        enabled="true" 
+        use-java-context="true" pool-name="angelsDatasource_pool">
+        <connection-url>jdbc:postgresql://localhost:5432/angelsmt</connection-url>
+        <driver>postgresql-9.1-901.jdbc4.jar</driver>
+        <security>
+		      <user-name>postgres</user-name>
+		      <password>1234</password>
+        </security>
+    </datasource>
+</datasources>
